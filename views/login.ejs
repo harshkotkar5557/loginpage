@@ -1,0 +1,13 @@
+<%- include('partials/header') %> 
+  <form action="/login" method="POST">
+    <h2>Login</h2>
+    <label for="user">User</label>
+    <input type="text" name="user"  />
+    <div class="user error"></div>
+    <label for="profilename">Profile Name</label>
+    <input type="text" name="profilename"  />
+    <div class="profilename error"></div>
+    <button>login</button>
+  </form>
+  
+  <%- include('partials/footer') %> 
