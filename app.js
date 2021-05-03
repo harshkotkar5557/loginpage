@@ -15,18 +15,25 @@ const db = mySql.createConnection({
     host: 'localhost',
     user: 'root',
     password: "",
-    database:'gmcostdb'
+    database:'gmcost'
 });
 
 db.connect((error)=>{
     if(error){
-        console.log(error);
+        throw error;
     }else{
         console.log("connected to Mysql");
     }
 })
 // routes 
+app.get('/', (req,res)=>{
+    res.render('home')
+})
+
+app.get('/reports', (req,res)=>{
+    res.render('reports')
+})
 
 app.use(authRouter)
 
-app.listen(3000,()=>{console.log("listening to port 3000");});
+app.listen(4000,()=>{console.log("listening to port 4000")});
